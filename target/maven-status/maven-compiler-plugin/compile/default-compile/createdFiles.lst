@@ -1,0 +1,15 @@
+com\mt\config\userDetail\AdminUserDetailsService.class
+com\mt\config\SecurityPropertiesConfig.class
+com\mt\bean\UmsPermission.class
+com\mt\mapper\UmsAdminMapper.class
+com\mt\SecurityApplication.class
+com\mt\bean\UmsAdmin.class
+META-INF\spring-configuration-metadata.json
+com\mt\service\UmsAdminService.class
+com\mt\util\JwtTokenUtil.class
+com\mt\mapper\UmsPermissionMapper.class
+com\mt\config\JwtTokenFilter.class
+com\mt\config\WebSecurityConfig.class
+com\mt\mapper\UmsResourceMapper.class
+com\mt\config\userDetail\AdminUserDetail.class
+com\mt\bean\UmsResource.class

@@ -1,0 +1,36 @@
+{
+  "groups": [
+    {
+      "name": "security",
+      "type": "com.mt.config.SecurityPropertiesConfig",
+      "sourceType": "com.mt.config.SecurityPropertiesConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "security.expiration",
+      "type": "java.lang.Long",
+      "description": "token的过期时间 单位秒",
+      "sourceType": "com.mt.config.SecurityPropertiesConfig"
+    },
+    {
+      "name": "security.ignore-url",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "忽略Url权限校验",
+      "sourceType": "com.mt.config.SecurityPropertiesConfig"
+    },
+    {
+      "name": "security.secret-key",
+      "type": "java.lang.String",
+      "description": "生成token的密钥",
+      "sourceType": "com.mt.config.SecurityPropertiesConfig"
+    },
+    {
+      "name": "security.token-header-name",
+      "type": "java.lang.String",
+      "description": "token的请求头名称",
+      "sourceType": "com.mt.config.SecurityPropertiesConfig"
+    }
+  ],
+  "hints": []
+}

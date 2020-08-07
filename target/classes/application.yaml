@@ -1,0 +1,36 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.mt.bean
+  configuration:
+    log-impl:
+    map-underscore-to-camel-case: true
+
+
+security:
+  ignoreUrl:
+      - /login
+      - /regist
+  token-header-name: token
+  expiration: 3600
+  secret-key: '%ewri#$s1~r~`3(w3@'
+
+
+
+
+
+
+
+
+
+

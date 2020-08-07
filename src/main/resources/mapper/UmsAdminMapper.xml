@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mt.mapper.UmsAdminMapper">
+
+
+
+    <sql id="allColumn">
+        id,
+        pid,
+        name,
+        value,
+        icon,
+        type,
+        uri,
+        status,
+        create_time,
+        sort
+    </sql>
+
+    <select id="getPermissions" resultType="com.mt.bean.UmsPermission">
+        SELECT 
+         <include refid="allColumn"/>
+         FROM ums_permission
+        WHERE
+            id IN (
+                SELECT
+                    permission_id
+                FROM
+                    ums_role_permission_relation
+                WHERE
+                role_id IN (
+                    SELECT role_id FROM ums_admin_role_relation WHERE admin_id = #{userId}
+                )
+            )
+
+    </select>
+
+    <select id="getResource" resultType="com.mt.bean.UmsResource">
+         SELECT
+            id,create_time,name,url,description,category_id
+        FROM ums_resource
+        WHERE
+        id IN (
+        SELECT
+        resource_id
+        FROM
+        ums_role_resource_relation
+        WHERE
+        role_id IN (
+        SELECT role_id FROM ums_admin_role_relation WHERE admin_id = #{userId}
+        )
+        )
+
+    </select>
+
+    <select id="getAllResource" resultType="com.mt.bean.UmsResource">
+         SELECT
+            id,create_time,name,url,description,category_id
+        FROM ums_resource
+    </select>
+
+
+</mapper>
